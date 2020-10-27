@@ -91,7 +91,7 @@
 // Show the bitmap in Marlin/_Bootscreen.h on startup.
 //#define SHOW_CUSTOM_BOOTSCREEN   //[AW] disable to save space
 
-// Show the bitmap in Marlin/_ screen.h on the status screen.
+// Show the bitmap in Marlin/_Statusscreen.h on the status screen.
 #define CUSTOM_STATUS_SCREEN_IMAGE   //[AW] disable to save space
 
 // @section machine
@@ -135,7 +135,7 @@
 
 
 // Name displayed in the LCD "Ready" message and Info menu
-#define CUSTOM_MACHINE_NAME "Marlin 2.0.0"
+#define CUSTOM_MACHINE_NAME "Marlin 2.0.0"    //[AW] was "Ender-3"
 
 // Printer's unique ID, used by some programs to differentiate between machines.
 // Choose your own or use a service like http://www.uuidgenerator.net/version4
@@ -723,7 +723,7 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 93 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 425 }    //[AW] - E0 was 93; updated for Bondtech
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -1177,7 +1177,7 @@
  * Normally G28 leaves leveling disabled on completion. Enable
  * this option to have G28 restore the prior leveling state.
  */
-#define RESTORE_LEVELING_AFTER_G28
+#define RESTORE_LEVELING_AFTER_G28    // [AW] Uncommented
 
 /**
  * Enable detailed logging of G28, G29, M48, etc.
@@ -1284,7 +1284,7 @@
 #endif
 
 // Add a menu item to move between bed corners for manual bed adjustment
-//#define LEVEL_BED_CORNERS
+#define LEVEL_BED_CORNERS     //[AW] uncommented
 
 #if ENABLED(LEVEL_BED_CORNERS)
   #define LEVEL_CORNERS_INSET 30    // (mm) An inset for corner leveling
@@ -1442,14 +1442,14 @@
 
 // Preheat Constants
 #define PREHEAT_1_LABEL       "PLA"
-#define PREHEAT_1_TEMP_HOTEND 185
-#define PREHEAT_1_TEMP_BED     45
-#define PREHEAT_1_FAN_SPEED   255 // Value from 0 to 255
+#define PREHEAT_1_TEMP_HOTEND 200 //[AW] was 195
+#define PREHEAT_1_TEMP_BED     60 //[AW] was 45
+#define PREHEAT_1_FAN_SPEED     0 // Value from 0 to 255  [AW] was 255
 
-#define PREHEAT_2_LABEL       "ABS"
+#define PREHEAT_2_LABEL       "PETG"  //[AW] was "ABS"
 #define PREHEAT_2_TEMP_HOTEND 240
-#define PREHEAT_2_TEMP_BED      0
-#define PREHEAT_2_FAN_SPEED   255 // Value from 0 to 255
+#define PREHEAT_2_TEMP_BED     70 //[AW] was 0
+#define PREHEAT_2_FAN_SPEED     0 // Value from 0 to 255  [AW] was 255
 
 /**
  * Nozzle Park
